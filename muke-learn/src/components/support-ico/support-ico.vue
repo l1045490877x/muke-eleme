@@ -1,5 +1,5 @@
 <template>
-    <span class="support-ico" :class="icoCls"></span>
+    <span class="support-ico" :class="iconCls"></span>
 </template>
 
 <script>
