@@ -1,6 +1,6 @@
 <template>
     <div class="goods">
-        < class="scroll-nav-wrapper">
+        <div class="scroll-nav-wrapper">
             <cube-scroll-nav
                 :side=true
                 :data="goods"
