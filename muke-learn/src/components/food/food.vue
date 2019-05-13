@@ -197,7 +197,11 @@ export default {
                     font-size $fontsize-small-s
                     color $color-light-grey
             .cart-control-wrapper
-                position relative
+                position absolute 
+                right 12px
+                bottom 12px
+            .buy
+                position absolute
                 right 18px
                 bottom 18px
                 z-index 10
@@ -223,5 +227,55 @@ export default {
                 font-size $fontsize-medium
                 color $color-dark-grey 
             .text
+                line-height 24px
+                padding 0 8px
+                font-size $fontsize-small
+                color $color-gray
+            .rating-wrapper
+                padding 0 18px
+                .rating-item
+                    position relative
+                    padding 16px 0
+                    &:last-child
+                        border-none()
+                    .user
+                        position absolute 
+                        right 0
+                        top 16px
+                        display flex
+                        align-items center
+                        line-height 12px
+                        .name 
+                            margin-right 6px
+                            font-size $fontsize-small-s
+                            color $color-light-grey
+                        .avatar
+                            border-radius 50%
+                    .time
+                        margin-bottom 6px
+                        line-height 12px
+                        font-size $fontsize-small-s
+                        color $color-light-grey
+                    .text
+                        line-height 16px
+                        font-size $fontsize-small
+                        color $color-dark-gery
+                        .icon-thum_up,.icon-thum_down
+                            margin-right 4px
+                            line-height 16px
+                            font-size $fontsize-small
+                            color $color-dark-grey
+                            .icon-thumb_up,.icon-thumb_down
+                                margin-right 4px
+                                line-height 16px
+                                font-size $fontsize-small
+                            .icon-thumb_up
+                                color $color-blue
+                            .icon-thumb_down
+                                color $color-light-grey
+                .no-rating
+                    padding 16px 0
+                    font-size $fontsize-small
+                    color $color-light-grey
 </style>
 
