@@ -37,8 +37,8 @@
 
 <script>
 import popupMixin from  'common/mixins/popup'
-import Star from 'components/star/star'
-import SupportIco from 'components/support-ico/support-ico'
+import star from 'components/star/star'
+import supportIco from 'components/support-ico/support-ico'
 export default {
    name: 'header-detail',
    mixins: [popupMixin],
@@ -59,8 +59,8 @@ export default {
 //        }
 //    },
    components: {
-       SupportIco,
-       Star
+       supportIco,
+       star
    }
 }
 </script>

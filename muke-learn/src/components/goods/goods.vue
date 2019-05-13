@@ -55,7 +55,7 @@
                                     <span class="old" v-show="food.ildPrice">￥{{food.oldPrice}}</span>
                                 </div>
                                 <div class="cart-control-wrapper">
-                                    <cart-control @add="onAdd" :food="food"></cart-control>
+                                    <cartcontrol @add="onAdd" :food="food"></cartcontrol>
                                 </div>
                             </div>
                         </li>
@@ -64,19 +64,19 @@
             </cube-scroll-nav>
         </div>
         <div class="shop-cart-wrapper">
-            <shop-cart
+            <shopcart
                 ref="shopCart"
                 :select-foods="selectFoods"
                 :delivery-price="seller.deliveryPrice"
-                :min-price="seller.miniPrice"></shop-cart>
+                :min-price="seller.miniPrice"></shopcart>
         </div>
     </div>
 </template>
 
 <script>
 import {getGoods} from 'api'
-import cartControl from 'components/cart-control/cart-control'
-import shopCart from 'components/shop-cart/shop-cart'
+import cartcontrol from 'components/cart-control/cart-control'
+import shopcart from 'components/shop-cart/shop-cart'
 import food from 'components/food/food'
 import supportIco from 'components/support-ico/support-ico'
 import bubble from 'components/bubble/bubble'
@@ -187,8 +187,8 @@ export default {
     components: {
         bubble,
         supportIco,
-        cartControl,
-        shopCart,
+        cartcontrol,
+        shopcart,
         food
     }
 }

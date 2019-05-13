@@ -20,7 +20,7 @@
                             <span class="now">￥{{food.price}}</span><span class="old" v-show="food.oldPrice">￥{{food.oldPrice}}</span>
                         </div>
                         <div class="cart-control-wrapper">
-                            <cart-control @add="addFood" :food="food"></cart-control>
+                            <cartcontrol @add="addFood" :food="food"></cartcontrol>
                         </div>
                         <transition name="fade">
                             <div @click="addFirst" v-show="!food.count" class="buy">
@@ -36,14 +36,14 @@
                     <split></split>
                     <div class="rating">
                         <h1 class="title">商品评价</h1>
-                        <rating-select
+                        <ratingselect
                             @select="onSelect"
                             @toggle="onToggle"
                             :selectType="selectType"
                             :onlyContent="onlyContent"
                             :desc = "desc"
                             :ratings = "ratings">
-                        </rating-select>
+                        </ratingselect>
                         <div class="rating-wrapper">
                             <ul v-show="computedRatings && computedRatings.length">
                                 <li 
@@ -72,9 +72,9 @@
 
 <script>
 import moment from 'moment'
-import CartControl from 'components/cart-control/cart-control'
-import RatingSelect from 'components/rating-select/rating-select'
-import Split from 'components/split/split'
+import cartcontrol from 'components/cart-control/cart-control'
+import ratingselect from 'components/rating-select/rating-select'
+import split from 'components/split/split'
 import ragingMixin from 'common/mixins/rating'
 import popupMixin from 'common/mixins/popup'
 
@@ -124,9 +124,9 @@ export default {
         }
     },
     components:{
-        CartControl,
-        RatingSelect,
-        Split
+        cartcontrol,
+        ratingselect,
+        split
     }
 }
 </script>
