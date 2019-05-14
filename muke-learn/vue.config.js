@@ -14,7 +14,9 @@ module.exports = {
     loaderOptions: {
       stylus: {
         'resolve url': true,
-        import: ['./src/theme']
+        'import': [
+          './src/theme'
+        ]
       }
     }
   },
@@ -52,7 +54,7 @@ module.exports = {
       .set('common', resolve('src/common'))
       .set('api', resolve('src/api'))
 
-    config.plugin('content')
+    config.plugin('context')
       .use(webpack.ContextReplacementPlugin,
         [/moment[/\\]locale$/, /zh-cn/])
   },
