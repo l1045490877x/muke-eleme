@@ -7,11 +7,10 @@ export default {
       onlyContent: true
     }
   },
-
   computed: {
     computedRatings () {
       let ret = []
-      this.rating.forEach((rating) => {
+      this.ratings.forEach((rating) => {
         if (this.onlyContent && !rating.text) {
           return
         }
@@ -23,10 +22,10 @@ export default {
     }
   },
   methods: {
-    onselect (type) {
+    onSelect (type) {
       this.selectType = type
     },
-    ontoggle () {
+    onToggle () {
       this.onlyContent = !this.onlyContent
     }
   }

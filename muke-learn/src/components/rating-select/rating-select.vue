@@ -79,47 +79,47 @@ export default {
 };
 </script>
 <style lang="stylus" rel="stylesheet/stylus">
-    @import "~common/stylus/variable"
+  @import "~common/stylus/variable"
 
-    .rating-select
-        .rating-type
-            padding 18px 0
-            margin 0 18px
-            .block
-                display inline-block
-                padding 8px 12px
-                margin-height 16px
-                border-radius 1px
-                font-size $fontsize-small
-                color $color-gray
-                &.active    
-                    color $color-white
-                .count
-                    margin-left 2px
-                &.positive
-                    background $color-light-blue
-                    &.active    
-                        bakcground $color-blue
-                &.negative
-                    background $color-light-gray-s
-                    &.active
-                        bakcground $color-grey
-        .switch
-            display flex
-            align-items center
-            padding 12px 18px
-            line-height 24px
-            border-bottom 1px solid $color-row-line
-            color $color-light-gray
-            &.on
-                .icon-check_circle
-                    color $color-green
-            .icon-check_circle
-                margin-right 4px
-                font-size $fontsize-larget-xxx
-            .text 
-                fonst-size $fontsize-small
-
+  .rating-select
+    .rating-type
+      padding: 18px 0
+      margin: 0 18px
+      .block
+        display: inline-block
+        padding: 8px 12px
+        margin-right: 8px
+        line-height: 16px
+        border-radius: 1px
+        font-size: $fontsize-small
+        color: $color-grey
+        &.active
+          color: $color-white
+        .count
+          margin-left: 2px
+        &.positive
+          background: $color-light-blue
+          &.active
+            background: $color-blue
+        &.negative
+          background: $color-light-grey-s
+          &.active
+            background: $color-grey
+    .switch
+      display: flex
+      align-items: center
+      padding: 12px 18px
+      line-height: 24px
+      border-bottom: 1px solid $color-row-line
+      color: $color-light-grey
+      &.on
+        .icon-check_circle
+          color: $color-green
+      .icon-check_circle
+        margin-right: 4px
+        font-size: $fontsize-large-xxx
+      .text
+        font-size: $fontsize-small
 </style>
 
 
