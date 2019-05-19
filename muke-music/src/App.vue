@@ -5,14 +5,10 @@
 </template>
 
 <script>
-
 </script>
 
 <style lang="stylus" scoped rel="stylesheet/stylus">
   @import "~common/stylus/variable"
-
   #app
     color $color-theme
 </style>
-
-
