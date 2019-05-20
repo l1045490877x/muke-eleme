@@ -6,7 +6,7 @@
 </template>
 
 <script>
-export default {};
+export default {}
 </script>
 
 <style lang="stylus" rel="stylesheet/stylus">
@@ -42,4 +42,3 @@ export default {};
 			font-size: 20px
 			color: $color-theme
 </style>
-
