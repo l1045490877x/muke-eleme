@@ -10,8 +10,19 @@ export default new Router({
   routes: [
     {
       path: '/recommend',
-      name: 'HelloWorld',
-      component: reco
+      component: Recommend
+    },
+    {
+      path: '/singer',
+      component: Singer
+    },
+    {
+      path: '/rank',
+      component: Rank
+    },
+    {
+      path: '/search',
+      component: Search
     }
   ]
 })
