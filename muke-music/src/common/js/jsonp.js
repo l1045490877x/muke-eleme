@@ -13,11 +13,13 @@ export default function jsonp (url, data, option) {
   })
 }
 
-function param (data) {
+export function param (data) {
   let url = ''
   for (var k in data) {
+    // 以防undefined，如果为undefined则传空
     let value = data[k] !== undefined ? data[k] : ''
     url += `&${k}=${encodeURIComponent(value)}`
   }
+  // 删除首个&，以防重复拼接
   return url ? url.substring(1) : ''
 }
