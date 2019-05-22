@@ -1,12 +1,14 @@
 <template>
 	<div class="recommend" ref="recommend">
-		<scroll ref="scroll" class="recommend-content" :data="discList">
+		<!-- <scroll ref="scroll" class="recommend-content" :data="discList"> -->
 			<div>
+				<!-- v-if="recommends.length" 是为了以防mounted时还获取不到未加载的数据-->
 				<div v-if="recommends.length" class="slider-wrapper" ref="sliderWrapper">
 					<slider>
 						<div v-for="(item,index) in recommends" :key="index">
 							<a href="item.linkUrl">
-								<img class="needsclick" @load="loadImage" :src="item.picUrl">
+								<!-- @load="loadImage" -->
+								<img class="needsclick"  :src="item.picUrl">
 							</a>
 						</div>
 					</slider>
@@ -27,15 +29,15 @@
 				</div>
 			</div>
 			<div class="loading-container" v-show="!discList.length">
-				<loading></loading>
+				<!-- <loading></loading> -->
 			</div>
-		</scroll>
+		<!-- </scroll> -->
 		<router-view></router-view>
 	</div>
 </template>
 
 <script>
-// import Slider from 'base/slider/slider'
+import Slider from 'base/slider/slider'
 // import Loading from 'base/loading/loading'
 // import Scroll from 'base/scroll/scroll'
 // , getDiscList
@@ -65,7 +67,6 @@ export default {
       getRecommend().then(res => {
         if (res.code === ERR_OK) {
           this.recommends = res.data.slider
-          console.log(res.data.slider)
         }
       })
     }
@@ -78,7 +79,7 @@ export default {
     // }
   },
   components: {
-    // Slider,
+    Slider
     // Loading,
     // Scroll
   }
