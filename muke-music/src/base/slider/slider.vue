@@ -1,9 +1,12 @@
+/* eslint-disable vue/require-v-for-key */
 <template>
 	<div class="slider" ref="slider">
 		<div class="slider-group" ref="sliderGroup">
 			<slot></slot>
 		</div>
-		<div class="dots"></div>
+		<div class="dots">
+      <span class="dot" v-for="(item, index) in dots" :class="{active: currentPageIndex === index }" :key="index"></span>
+    </div>
 	</div>
 </template>
 
@@ -11,6 +14,12 @@
 import BScroll from 'better-scroll'
 import { addClass } from 'common/js/dom'
 export default {
+  data () {
+    return {
+      dots: [],
+      currentPageIndex: 0
+    }
+  },
   porps: {
     loop: {
       type: Boolean,
@@ -28,11 +37,26 @@ export default {
   mounted () {
     setTimeout(() => {
       this._setSliderWidth()
+      this._initDots()
       this._initSlider()
+      if (this.autoPlay) {
+        this._play()
+      }
     }, 20)
+
+    window.addEventListener('resize', () => {
+      if (!this.slider) {
+        return
+      }
+      this._setSliderWidth(true)
+      this._slider.refresh()
+    })
+  },
+  destoryed () {
+    clearTimeout(this.timer)
   },
   methods: {
-    _setSliderWidth () {
+    _setSliderWidth (isResize) {
       this.children = this.$refs.sliderGroup.children
 
       let width = 0
@@ -56,9 +80,29 @@ export default {
         snap: true,
         snapLoop: this.loop,
         snapThreshold: 0.3,
-        snapSpeed: 400,
-        click: true
+        snapSpeed: 400
       })
+      this.slider.on('scrollEnd', () => {
+        let pageIndex = this.slider.getCurrentPage().pageX
+        if (this.loop) {
+          pageIndex -= 1
+        }
+        this.currentPageIndex = pageIndex
+
+        if (this.autoPlay) {
+          clearTimeout(this.timer)
+          this._play()
+        }
+      })
+    },
+    _play () {
+      let pageIndex = this.currentPageIndex + 1
+      if (this.loop) {
+        pageIndex += 1
+      }
+      this.timer = setTimeout(() => {
+        this.slider.goToPage(pageIndex, 0, 400)
+      }, this.interval)
     }
   }
 }
